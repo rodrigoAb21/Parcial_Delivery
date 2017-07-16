@@ -1,4 +1,4 @@
-@extends('index')
+@extends('admin')
 @section('contenido')
 
 
@@ -26,9 +26,9 @@
 				<tr >
 					<td style="text-align: center">{{$ped -> idPedido}}</td>
 					<td style="text-align: center">{{$ped -> fecha}}</td>
-					<td>{{$ped -> estado}}</td>
 					<td>{{$ped -> zona}}</td>
 					<td style="text-align: center">{{$ped -> montoP}}</td>
+					<td><h4><span class="label label-primary pull-top">{{ $ped -> estado}}</span></h4></td>
 					<td style="text-align: center">
 						<a href="{{URL::action('PedidoController@edit',$ped -> idPedido)}}"><button class="btn btn-info"><i class="fa fa-pencil"></i></button></a>
 						<a href="{{URL::action('PedidoController@show',$ped -> idPedido)}}"><button class="btn btn-primary"><i class="fa fa-eye"></i></button></a>

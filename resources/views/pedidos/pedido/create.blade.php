@@ -1,4 +1,4 @@
-@extends ('index')
+@extends ('admin')
 @section ('contenido')
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -97,18 +97,18 @@
                         </tbody>
                         <tfoot>
                         <tr>
-                            <th><h4>Sub-Total</h4></th>
+                            <th><h5>Sub-Total</h5></th>
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th><h4 id="stotal">Bs. 0.00</h4>
+                            <th><h5 id="stotal">Bs. 0.00</h5>
                         </tr>
                         <tr>
-                            <th><h4>Costo de Envio</h4></th>
+                            <th><h5>Costo de Envio</h5></th>
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th><h4 id="costo_envio">Bs. 0.00</h4>
+                            <th><h5 id="costo_envio">Bs. 0.00</h5>
                         </tr>
                         <tr>
                             <th><h3>TOTAL</h3></th>

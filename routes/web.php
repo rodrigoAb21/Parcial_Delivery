@@ -12,12 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('cliente/anuncios');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+Route::get('productos', function () {
+    return view('cliente/productos');
+});
 
 
 Route::resource('pedidos/zona', 'ZonaController');
