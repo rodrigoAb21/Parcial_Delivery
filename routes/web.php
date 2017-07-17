@@ -22,9 +22,8 @@ Route::get('/home', 'HomeController@index');
 Route::get('/admin', function () {
     return view('admin');
 });
-Route::get('productos', function () {
-    return view('cliente/productos');
-});
+Route::get('productos', 'CProductosController@index');
+
 
 
 Route::resource('pedidos/zona', 'ZonaController');

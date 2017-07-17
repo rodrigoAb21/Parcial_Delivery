@@ -8,9 +8,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
   position: relative;
-  font-weight:400px;
+  font-weight:400;
 }
 
 ul li {
@@ -899,7 +898,6 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
 }
 
 .single-products:hover .product-overlay {
@@ -997,8 +995,7 @@ h2.title {
 }
 
 .category-tab ul {
-  background: #40403E;
-  border-bottom: 1px solid #FE980F;
+  background: #FFFFFF;
   list-style: none outside none;
   margin: 0 0 30px;
   padding: 0;
@@ -1008,7 +1005,7 @@ h2.title {
 .category-tab ul li a {
   border: 0 none;
   border-radius: 0;
-  color: #B3AFA8;
+  color: #40403E;
   display: block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -2141,7 +2138,6 @@ h2.title {
 
 .rating-area {
   border: 1px solid #F7F7F0;
-  direction: block;
   overflow: hidden;
 }
 

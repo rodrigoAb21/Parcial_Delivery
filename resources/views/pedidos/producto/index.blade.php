@@ -38,17 +38,6 @@
 				@endforeach
 			</table>
 		</div>
-		<!-----Primer intento------>
-		@foreach($producto as $pr)
-		<div class="col-lg-12 col-sm-3 col-xs-12"  style="display: block">
-			<div style="text-align: center">
-				<p>{{$pr -> nombre}}</p>
-				<img src="{{asset('img/productos/'.$pr -> imagen)}}" alt="{{$pr -> nombre}}" height="150px" width="150px" class="img-thumbnail">
-			</div>
-		</div>
-		@endforeach
-
-		<!-----Primer intento------>
 		{{$producto -> render()}}
 	</div>
 </div>
