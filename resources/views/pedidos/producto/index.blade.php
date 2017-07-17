@@ -18,6 +18,7 @@
 					<th>Id</th>
 					<th>Nombre</th>
 					<th>Precio</th>
+					<th>Tipo</th>
 					<th>Imagen</th>
 					<th>Opciones</th>
 				</thead>
@@ -26,6 +27,7 @@
 					<td>{{ $prod -> idProducto}}</td>
 					<td>{{ $prod -> nombre}}</td>
 					<td>{{ $prod -> precio}}</td>
+					<td>{{ $prod -> tipo}}</td>
 					<td>
 						<img src="{{asset('img/productos/'.$prod -> imagen)}}" alt="{{$prod -> nombre}}" height="100px" width="100px" class="img-thumbnail">
 					</td>

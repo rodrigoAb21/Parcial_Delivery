@@ -18,9 +18,11 @@ class ProductoController extends Controller
         {
             $query=trim($request->get('searchText'));
             $producto=DB::table('producto')->where('nombre','LIKE','%'.$query.'%')
+                ->join('tipo', 'producto.idTipo', '=', 'tipo.idTipo')
                 ->where ('visible','=','1')
+                -select('producto.idProducto', 'producto.nombre', 'producto.precio', 'tipo.nombre as tipo', 'producto.imagen' )
                 ->orderBy('idProducto','asc')
-                ->paginate(7);
+                ->paginate(9);
             return view('pedidos.producto.index',["producto"=>$producto,"searchText"=>$query]);
         }
     }
@@ -32,7 +34,9 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view("pedidos.producto.create");
+        $tipo = DB::table('tipo')
+            ->where('visible', '=', '1') -> get();
+        return view("pedidos.pedido.create",["tipo" => $tipo]);
     }
 
     /**

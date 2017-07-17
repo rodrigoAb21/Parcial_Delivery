@@ -15,12 +15,15 @@ class CreateProductoTable extends Migration
     {
         Schema::create('producto', function (Blueprint $table) {
             $table->increments('idProducto');
+            $table->integer('idTipo');
             $table->string('nombre');
             $table->string('imagen');
             $table->float('precio');
             $table->string('descripcion');
             $table->char('visible');
             $table->timestamps();
+
+            $table->foreign('idTipo')->references('idTipo')->on('tipo');
         });
     }
 
