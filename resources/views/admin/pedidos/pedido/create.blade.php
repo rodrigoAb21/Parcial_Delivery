@@ -15,7 +15,7 @@
 		</div>
 	</div>
 
-			{!!Form::open(array('url'=>'pedidos/pedido','method'=>'POST','autocomplete'=>'off'))!!}
+			{!!Form::open(array('url'=>'admin/pedidos/pedido','method'=>'POST','autocomplete'=>'off'))!!}
             {{Form::token()}}
     <div class="row">
 

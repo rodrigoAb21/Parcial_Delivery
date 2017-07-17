@@ -31,7 +31,7 @@ class PedidoController extends Controller
                 ->where('pedido.visible','=','1')
                 ->orderBy('pedido.idPedido','asc')
                 ->paginate(10);
-            return view('pedidos.pedido.index',["pedido"=>$pedido,"searchText"=>$query]);
+            return view('admin.pedidos.pedido.index',["pedido"=>$pedido,"searchText"=>$query]);
         }
     }
 
@@ -48,7 +48,7 @@ class PedidoController extends Controller
         $producto = DB::table('producto')
             ->select('idProducto','nombre','precio')
             ->where('visible', '=', '1') -> get();
-        return view("pedidos.pedido.create",["zona" => $zona, "estado" => $estado, "producto" => $producto]);
+        return view("admin.pedidos.pedido.create",["zona" => $zona, "estado" => $estado, "producto" => $producto]);
 
     }
 
@@ -95,7 +95,7 @@ class PedidoController extends Controller
         }
 
 
-        return  Redirect::to('pedidos/pedido');
+        return  Redirect::to('admin/pedidos/pedido');
     }
 
     /**
@@ -119,7 +119,7 @@ class PedidoController extends Controller
             -> where('detalle.idPedido','=', $id)
             -> get();
 
-        return view('pedidos.pedido.show',["pedido"=>$pedido,"detalle"=>$detalle]);
+        return view('admin.pedidos.pedido.show',["pedido"=>$pedido,"detalle"=>$detalle]);
     }
 
     /**

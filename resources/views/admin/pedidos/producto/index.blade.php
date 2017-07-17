@@ -6,7 +6,7 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3>Gestionar Productos <a href="{{URL::action('ProductoController@create')}}"><button class="btn btn-success">Nuevo</button></a></h3>
-		@include('pedidos.producto.search')
+		@include('admin.pedidos.producto.search')
 	</div>
 </div>
 
@@ -36,7 +36,7 @@
                          <a href="" data-target="#modal-delete-{{$prod -> idProducto}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
 					</td>
 				</tr>
-				@include('pedidos.producto.modal')
+				@include('admin.pedidos.producto.modal')
 				@endforeach
 			</table>
 		</div>

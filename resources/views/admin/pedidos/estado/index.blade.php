@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3>Gestionar Estados <a href="{{URL::action('EstadoController@create')}}"><button class="btn btn-success">Nuevo</button></a></h3>
-		@include('pedidos.estado.search')
+		@include('admin.pedidos.estado.search')
 	</div>
 </div>
 
@@ -25,7 +25,7 @@
                          <a href="" data-target="#modal-delete-{{$est->idEstado}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
 					</td>
 				</tr>
-				@include('pedidos.estado.modal')
+				@include('admin.pedidos.estado.modal')
 				@endforeach
 			</table>
 		</div>

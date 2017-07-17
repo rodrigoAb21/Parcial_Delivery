@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3>Gestionar Zonas <a href="{{URL::action('ZonaController@create')}}"><button class="btn btn-success">Nuevo</button></a></h3>
-		@include('pedidos.zona.search')
+		@include('admin.pedidos.zona.search')
 	</div>
 </div>
 
@@ -27,7 +27,7 @@
                          <a href="" data-target="#modal-delete-{{$zon->idZona}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
 					</td>
 				</tr>
-				@include('pedidos.zona.modal')
+				@include('admin.pedidos.zona.modal')
 				@endforeach
 			</table>
 		</div>

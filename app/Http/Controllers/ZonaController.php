@@ -25,7 +25,7 @@ class ZonaController extends Controller
                 ->where ('visible','=','1')
                 ->orderBy('idZona','asc')
                 ->paginate(7);
-            return view('pedidos.zona.index',["zona" => $zona, "searchText" => $query]);
+            return view('admin.pedidos.zona.index',["zona" => $zona, "searchText" => $query]);
         }
     }
 
@@ -36,7 +36,7 @@ class ZonaController extends Controller
      */
     public function create()
     {
-        return view("pedidos.zona.create");
+        return view("admin.pedidos.zona.create");
     }
 
     /**
@@ -52,7 +52,7 @@ class ZonaController extends Controller
         $zona -> costo = $request->get('costo');
         $zona -> visible = '1';
         $zona -> save();
-        return Redirect::to('pedidos/zona');
+        return Redirect::to('admin/pedidos/zona');
     }
 
     /**
@@ -74,7 +74,7 @@ class ZonaController extends Controller
      */
     public function edit($id)
     {
-        return view("pedidos.zona.edit",["zona"=>Zona::findOrFail($id)]);
+        return view("admin.pedidos.zona.edit",["zona"=>Zona::findOrFail($id)]);
     }
 
     /**
@@ -90,7 +90,7 @@ class ZonaController extends Controller
         $zona -> nombre = $request->get('nombre');
         $zona -> costo = $request->get('costo');
         $zona -> update();
-        return Redirect::to('pedidos/zona');
+        return Redirect::to('admin/pedidos/zona');
     }
 
     /**
@@ -104,6 +104,6 @@ class ZonaController extends Controller
         $zona = Zona::findOrFail($id);
         $zona -> visible = '0';
         $zona -> update();
-        return Redirect::to('pedidos/zona');
+        return Redirect::to('admin/pedidos/zona');
     }
 }

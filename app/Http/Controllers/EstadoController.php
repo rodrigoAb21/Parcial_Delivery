@@ -25,7 +25,7 @@ class EstadoController extends Controller
                 ->where ('visible','=','1')
                 ->orderBy('idEstado','asc')
                 ->paginate(7);
-            return view('pedidos.estado.index',["estado" => $estado, "searchText" => $query]);
+            return view('admin.pedidos.estado.index',["estado" => $estado, "searchText" => $query]);
         }
     }
 
@@ -36,7 +36,7 @@ class EstadoController extends Controller
      */
     public function create()
     {
-        return view("pedidos.estado.create");
+        return view("admin.pedidos.estado.create");
     }
 
     /**
@@ -51,7 +51,7 @@ class EstadoController extends Controller
         $estado -> nombre = $request->get('nombre');
         $estado -> visible = '1';
         $estado -> save();
-        return Redirect::to('pedidos/estado');
+        return Redirect::to('admin/pedidos/estado');
     }
 
     /**
@@ -73,7 +73,7 @@ class EstadoController extends Controller
      */
     public function edit($id)
     {
-        return view("pedidos.estado.edit",["estado"=>estado::findOrFail($id)]);
+        return view("admin.pedidos.estado.edit",["estado"=>estado::findOrFail($id)]);
     }
 
     /**
@@ -88,7 +88,7 @@ class EstadoController extends Controller
         $estado = estado::findOrFail($id);
         $estado -> nombre = $request->get('nombre');
         $estado -> update();
-        return Redirect::to('pedidos/estado');
+        return Redirect::to('admin/pedidos/estado');
     }
 
     /**
@@ -102,6 +102,6 @@ class EstadoController extends Controller
         $estado = estado::findOrFail($id);
         $estado -> visible = '0';
         $estado -> update();
-        return Redirect::to('pedidos/estado');
+        return Redirect::to('admin/pedidos/estado');
     }
 }

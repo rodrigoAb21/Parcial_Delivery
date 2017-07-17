@@ -6,7 +6,7 @@
 	<div class="col-lg-8 col-md-8 col-sm8 col-xs-12">
 		
 <h3>Administrar Pedidos<a href="{{URL::action('PedidoController@create')}}"> <button class="btn btn-success">Nuevo</button></a></h3>
-@include('pedidos.pedido.search')		
+@include('admin.pedidos.pedido.search')
 	</div>
 </div>
 

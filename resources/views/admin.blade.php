@@ -32,6 +32,7 @@
       }
     </style>
 
+
   </head>
   <body class="hold-transition skin-blue-light sidebar-mini">
   <div class="wrapper">
@@ -39,7 +40,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="{{asset('/')}}" class="logo">
+        <a href="{{asset('/admin')}}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><i class="fa fa-laptop"></i></span>
           <!-- logo for regular state and mobile devices -->
@@ -100,10 +101,11 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{asset('pedidos/estado')}}"><i class="fa fa-arrow-right"></i> Gestionar Estados</a></li>
-                <li id="mZona"><a href="{{asset('pedidos/zona')}}"><i class="fa fa-arrow-right"></i> Gestionar Zonas</a></li>
-                <li><a href="{{asset('pedidos/producto')}}"><i class="fa fa-arrow-right"></i> Gestionar Productos</a></li>
-                <li><a href="{{asset('pedidos/pedido')}}"><i class="fa fa-arrow-right"></i> Gestionar Pedidos</a></li>
+                <li><a href="{{asset('admin/pedidos/estado')}}"><i class="fa fa-arrow-right"></i> Gestionar Estados</a></li>
+                <li><a href="{{asset('admin/pedidos/zona')}}"><i class="fa fa-arrow-right"></i> Gestionar Zonas</a></li>
+                <li><a href="{{asset('admin/pedidos/tipo')}}"><i class="fa fa-arrow-right"></i> Gestionar Tipos</a></li>
+                <li><a href="{{asset('admin/pedidos/producto')}}"><i class="fa fa-arrow-right"></i> Gestionar Productos</a></li>
+                <li><a href="{{asset('admin/pedidos/pedido')}}"><i class="fa fa-arrow-right"></i> Gestionar Pedidos</a></li>
               </ul>
             </li>                       
             <li class="treeview">

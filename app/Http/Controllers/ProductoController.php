@@ -17,13 +17,13 @@ class ProductoController extends Controller
         if ($request)
         {
             $query=trim($request->get('searchText'));
-            $producto=DB::table('producto')->where('nombre','LIKE','%'.$query.'%')
+            $producto=DB::table('producto')->where('producto.nombre','LIKE','%'.$query.'%')
                 ->join('tipo', 'producto.idTipo', '=', 'tipo.idTipo')
-                ->where ('visible','=','1')
-                -select('producto.idProducto', 'producto.nombre', 'producto.precio', 'tipo.nombre as tipo', 'producto.imagen' )
-                ->orderBy('idProducto','asc')
+                ->where ('producto.visible','=','1')
+                ->select('producto.idProducto', 'producto.nombre', 'producto.precio', 'tipo.nombre as tipo', 'producto.imagen' )
+                ->orderBy('producto.idProducto','asc')
                 ->paginate(9);
-            return view('pedidos.producto.index',["producto"=>$producto,"searchText"=>$query]);
+            return view('admin.pedidos.producto.index',["producto"=>$producto,"searchText"=>$query]);
         }
     }
 
@@ -36,7 +36,7 @@ class ProductoController extends Controller
     {
         $tipo = DB::table('tipo')
             ->where('visible', '=', '1') -> get();
-        return view("pedidos.pedido.create",["tipo" => $tipo]);
+        return view("admin.pedidos.producto.create",["tipo" => $tipo]);
     }
 
     /**
@@ -50,6 +50,7 @@ class ProductoController extends Controller
         $producto = new Producto;
         $producto -> nombre = $request -> get('nombre');
         $producto -> precio = $request -> get('precio');
+        $producto -> idTipo = $request -> get('idTipo');
         $producto -> descripcion = $request -> get('descripcion');
         $producto -> visible = '1';
         if (Input::hasFile('imagen')) {
@@ -59,7 +60,7 @@ class ProductoController extends Controller
         }
 
         $producto -> save();
-        return Redirect::to('pedidos/producto');
+        return Redirect::to('admin/pedidos/producto');
     }
 
     /**
@@ -81,7 +82,10 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        return view("pedidos.producto.edit",["producto"=>Producto::findOrFail($id)]);
+        $producto = Producto::findOrFail($id);
+        $tipo = DB::table('tipo')
+            ->where('visible', '=', '1') -> get();
+        return view("admin.pedidos.producto.edit",["producto" => $producto, "tipo" => $tipo]);
     }
 
     /**
@@ -96,6 +100,7 @@ class ProductoController extends Controller
         $producto = Producto::findOrFail($id);
         $producto -> nombre = $request ->get ('nombre');
         $producto -> precio = $request ->get ('precio');
+        $producto -> idTipo = $request ->get ('idTipo');
         $producto -> descripcion = $request ->get ('descripcion');
         $producto -> visible = '1';
         if (Input::hasFile('imagen')) {
@@ -104,7 +109,7 @@ class ProductoController extends Controller
             $producto -> imagen = $file -> getClientOriginalName();
         }
         $producto -> update();
-        return Redirect::to('pedidos/producto');
+        return Redirect::to('admin/pedidos/producto');
     }
 
     /**
@@ -118,6 +123,6 @@ class ProductoController extends Controller
         $producto = Producto::findOrFail($id);
         $producto -> visible = '0';
         $producto -> update();
-        return Redirect::to('pedidos/producto');
+        return Redirect::to('admin/pedidos/producto');
     }
 }

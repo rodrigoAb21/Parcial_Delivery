@@ -2,7 +2,7 @@
 @section ('contenido')
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h3>Nueva Zona</h3>
+			<h3>Nuevo Tipo</h3>
 			@if (count($errors)>0)
 			<div class="alert alert-danger">
 				<ul>
@@ -13,7 +13,7 @@
 			</div>
 			@endif
 
-			{!!Form::open(array('url'=>'pedidos/zona','method'=>'POST','autocomplete'=>'off'))!!}
+			{!!Form::open(array('url'=>'admin/pedidos/tipo','method'=>'POST','autocomplete'=>'off'))!!}
             {{Form::token()}}
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<div class="form-group">
@@ -21,13 +21,7 @@
 					<input type="text" name="nombre" class="form-control" >
 				</div>
 			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-				<div class="form-group">
-					<label for="costo">Costo de Envio</label>
-					<input type="text" name="costo" class="form-control" >
-				</div>
-			</div>
-
+			
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="form-group">
 					<button class="btn btn-primary" type="submit">Guardar</button>

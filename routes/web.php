@@ -26,7 +26,8 @@ Route::get('productos', 'CProductosController@index');
 
 
 
-Route::resource('pedidos/zona', 'ZonaController');
-Route::resource('pedidos/estado', 'EstadoController');
-Route::resource('pedidos/producto', 'ProductoController');
-Route::resource('pedidos/pedido', 'PedidoController');
+Route::resource('admin/pedidos/zona', 'ZonaController');
+Route::resource('admin/pedidos/tipo', 'TipoController');
+Route::resource('admin/pedidos/estado', 'EstadoController');
+Route::resource('admin/pedidos/producto', 'ProductoController');
+Route::resource('admin/pedidos/pedido', 'PedidoController');

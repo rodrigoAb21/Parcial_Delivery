@@ -33,6 +33,21 @@
 
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<div class="form-group">
+					<label>Tipo</label>
+					<select name="idTipo" class="form-control">
+						@foreach ($tipo as $tip)
+							@if ($tip -> idTipo == $producto -> idTipo)
+								<option value="{{$tip -> idUnidad}}" selected>{{$tip -> nombre}}</option>
+							@else
+								<option value="{{$tip -> idUnidad}}">{{$tip -> nombre}}</option>
+							@endif
+						@endforeach
+					</select>
+				</div>
+			</div>
+
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div class="form-group">
 					<label for="imagen">Imagen</label>
 					<input type="file" name="imagen" class="form-control">
 				</div>
