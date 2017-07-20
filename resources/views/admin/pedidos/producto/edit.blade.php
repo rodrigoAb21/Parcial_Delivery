@@ -37,9 +37,9 @@
 					<select name="idTipo" class="form-control">
 						@foreach ($tipo as $tip)
 							@if ($tip -> idTipo == $producto -> idTipo)
-								<option value="{{$tip -> idUnidad}}" selected>{{$tip -> nombre}}</option>
+								<option value="{{$tip -> idTipo}}" selected>{{$tip -> nombre}}</option>
 							@else
-								<option value="{{$tip -> idUnidad}}">{{$tip -> nombre}}</option>
+								<option value="{{$tip -> idTipo}}">{{$tip -> nombre}}</option>
 							@endif
 						@endforeach
 					</select>

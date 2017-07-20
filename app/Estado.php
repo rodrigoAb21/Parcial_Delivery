@@ -16,4 +16,5 @@ class Estado extends Model
         'nombre',
         'visible'
     ];
+
 }

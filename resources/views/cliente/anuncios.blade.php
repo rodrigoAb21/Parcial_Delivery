@@ -16,30 +16,30 @@
 					<div class="carousel-inner">
 						<div class="item active">
 							<div class="col-sm-12">
-								<img src="images/home/girl4.jpg" class="girl img-responsive" alt="" />
+								<img src="images/home/anuncio1.jpg" class="girl img-responsive" alt="" />
 							</div>
 						</div>
 						<div class="item">
 							<div class="col-sm-12">
-								<img src="images/home/girl5.jpg" class="girl img-responsive" alt="" />
-							</div>
-						</div>
-
-						<div class="item">
-							<div class="col-sm-12">
-								<img src="images/home/girl6.jpg" class="girl img-responsive" alt="" />
+								<img src="images/home/anuncio2.jpg" class="girl img-responsive" alt="" />
 							</div>
 						</div>
 
 						<div class="item">
 							<div class="col-sm-12">
-								<img src="images/home/girl7.jpg" class="girl img-responsive" alt="" />
+								<img src="images/home/anuncio3.jpg" class="girl img-responsive" alt="" />
 							</div>
 						</div>
 
 						<div class="item">
 							<div class="col-sm-12">
-								<img src="images/home/girl8.jpg" class="girl img-responsive" alt="" />
+								<img src="images/home/anuncio4.jpg" class="girl img-responsive" alt="" />
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="col-sm-12">
+								<img src="images/home/anuncio5.jpg" class="girl img-responsive" alt="" />
 							</div>
 						</div>
 

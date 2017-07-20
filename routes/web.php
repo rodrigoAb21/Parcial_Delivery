@@ -11,23 +11,38 @@
 |
 */
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+/************************** vistas para el cliente *******************************/
 Route::get('/', function () {
     return view('cliente/anuncios');
 });
 
-Auth::routes();
+Route::get('/productos/hamburguesas', 'CProductosController@hamburguesas');
+Route::get('/productos/pollos', 'CProductosController@pollos');
+Route::get('/productos/combos', 'CProductosController@combos');
+Route::get('/productos/complementos', 'CProductosController@complementos');
+Route::get('/productos/bebidas', 'CProductosController@bebidas');
 
-Route::get('/home', 'HomeController@index');
+
+//*********************************************************************************
+
+
+//*********************************ADMIN*******************************************
 
 Route::get('/admin', function () {
     return view('admin');
 });
-Route::get('productos', 'CProductosController@index');
-
-
 
 Route::resource('admin/pedidos/zona', 'ZonaController');
 Route::resource('admin/pedidos/tipo', 'TipoController');
 Route::resource('admin/pedidos/estado', 'EstadoController');
 Route::resource('admin/pedidos/producto', 'ProductoController');
 Route::resource('admin/pedidos/pedido', 'PedidoController');
+
+//*********************************************************************************
+

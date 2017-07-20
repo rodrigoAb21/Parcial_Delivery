@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | D-ELIVERY</title>
+    <title>Delivery Online</title>
+	<link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/prettyPhoto.css')}}" rel="stylesheet">
@@ -31,7 +32,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="{{asset('index.html')}}"><img src="{{asset('images/home/logo.png')}}" alt="" /></a>
+							<a href="{{asset('/')}}"><img src="{{asset('images/home/logo1.png')}}" alt="" height="100px" width="200px" /></a>
 						</div>
 					</div>
 					<div class="col-xs-8">
@@ -61,9 +62,9 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="{{asset('/')}}" class="active">Home</a></li>
-								<li><a href="{{asset('/productos')}}">Productos</a></li>
-								<li><a href="{{asset('contact-us.html')}}">Contact</a></li>
+								<li><a href="{{asset('/')}}">Home</a></li>
+								<li><a href="{{asset('/productos/hamburguesas')}}">Productos</a></li>
+								<li><a href="{{asset('')}}">Contact</a></li>
 							</ul>
 						</div>
 					</div>

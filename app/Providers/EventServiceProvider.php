@@ -13,7 +13,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'deli\Events\SomeEvent' => [
+        'deli\Events\Event' => [
             'deli\Listeners\EventListener',
         ],
     ];
