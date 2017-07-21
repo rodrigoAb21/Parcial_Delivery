@@ -45,7 +45,7 @@ class ZonaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ZonaFormRequest $request)
+    public function store(Request $request)
     {
         $zona = new Zona;
         $zona -> nombre = $request->get('nombre');
@@ -84,7 +84,7 @@ class ZonaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ZonaFormRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $zona = Zona::findOrFail($id);
         $zona -> nombre = $request->get('nombre');

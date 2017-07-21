@@ -45,7 +45,7 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductoFormRequest $request)
+    public function store(Request $request)
     {
         $producto = new Producto;
         $producto -> nombre = $request -> get('nombre');
@@ -95,7 +95,7 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductoFormRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $producto = Producto::findOrFail($id);
         $producto -> nombre = $request ->get ('nombre');

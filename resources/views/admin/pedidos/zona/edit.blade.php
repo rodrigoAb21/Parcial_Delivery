@@ -18,14 +18,14 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<div class="form-group">
 					<label for="nombre">Nombre</label>
-					<input type="text" name="nombre" class="form-control" value="{{$zona->nombre}}" >
+					<input type="text" name="nombre" class="form-control" value="{{$zona->nombre}}" required >
 				</div>
 			</div>
 
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<div class="form-group">
 					<label for="costo">Costo</label>
-					<input type="text" name="costo" class="form-control" value="{{$zona->costo}}" >
+					<input type="text" name="costo" class="form-control" value="{{$zona->costo}}"  required >
 				</div>
 			</div>
 

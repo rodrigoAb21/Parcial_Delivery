@@ -20,14 +20,14 @@
 	        	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 	        		<div class="form-group">
 	            	<label for="nombre">Nombre</label>
-	            	<input type="text" name="nombre" class="form-control" value="{{$producto->nombre}}" placeholder="Nombre...">
+	            	<input type="text" name="nombre" class="form-control" value="{{$producto->nombre}}"  required >
 	            </div>
         	</div>
 
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 	        	<div class="form-group">
 	            	<label for="precio">Precio</label>
-	            	<input type="text" min="0" name="precio" class="form-control" value="{{$producto -> precio}}" placeholder="Precio...">
+	            	<input type="text" min="0" name="precio" class="form-control" value="{{$producto -> precio}}"  required >
 	            </div>
         	</div>
 
@@ -49,10 +49,10 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<div class="form-group">
 					<label for="imagen">Imagen</label>
-					<input type="file" name="imagen" class="form-control">
+					<input type="file" name="imagen" class="form-control"  required >
 				</div>
 				@if (($producto -> imagen)!="")
-					<img src="{{asset('img/productos/'.$producto -> imagen)}}" height="150px" width="150px" class="img-thumbnail" >
+					<img src="{{asset('img/productos/'.$producto -> imagen)}}" height="150px" width="150px" class="img-thumbnail"  >
 				@endif
 
 			</div>
@@ -60,7 +60,7 @@
         	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<div class="form-group">
 					<label for="descripcion">Descripcion</label>
-					<textarea name="descripcion" class="form-control">{{$producto -> descripcion}}</textarea>
+					<textarea name="descripcion" class="form-control" required >{{$producto -> descripcion}}</textarea>
 				</div>
 			</div>
 

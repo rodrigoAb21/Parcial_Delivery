@@ -45,7 +45,7 @@ class EstadoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EstadoFormRequest $request)
+    public function store(Request $request)
     {
         $estado = new estado;
         $estado -> nombre = $request->get('nombre');
@@ -83,7 +83,7 @@ class EstadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EstadoFormRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $estado = estado::findOrFail($id);
         $estado -> nombre = $request->get('nombre');

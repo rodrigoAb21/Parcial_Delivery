@@ -44,7 +44,7 @@ class TipoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EstadoFormRequest $request)
+    public function store(Request $request)
     {
         $tipo = new tipo;
         $tipo -> nombre = $request->get('nombre');
@@ -82,7 +82,7 @@ class TipoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EstadoFormRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $tipo = tipo::findOrFail($id);
         $tipo -> nombre = $request->get('nombre');
