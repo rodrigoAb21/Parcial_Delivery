@@ -72,6 +72,11 @@ class ZonaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function edit($id)
     {
         return view("admin.pedidos.zona.edit",["zona"=>Zona::findOrFail($id)]);

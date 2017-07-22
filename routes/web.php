@@ -36,7 +36,12 @@ Route::get('/productos/bebidas', 'CProductosController@bebidas');
 
 Route::get('/admin', function () {
     return view('admin');
-});
+})->middleware('auth');
+
+Route::get('/admin/{slug?}', function () {
+    return view('admin');
+})->middleware('auth');
+
 
 Route::resource('admin/pedidos/zona', 'ZonaController');
 Route::resource('admin/pedidos/tipo', 'TipoController');
@@ -46,3 +51,6 @@ Route::resource('admin/pedidos/pedido', 'PedidoController');
 
 //*********************************************************************************
 
+Route::get('/{slug?}', function (){
+    return view('cliente/anuncios');
+});
