@@ -30,18 +30,29 @@
             </div>
         </div>
         
+        <!--  
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="form-group">
                 <label>Zona</label>
-                <select id="idZon"  name="idZon"  class="form-control selectpicker"  data-size="6" data-live-search="true">
-                    @foreach ($zona as $zon)
-                       <option value="{{$zon -> idZona}}_{{$zon -> costo}}">{{$zon -> nombre}}</option>
+                <select id="ciCli"  name="ciCli"  class="form-control selectpicker"  data-size="6" data-live-search="true">
+
+                </select>
+            </div>
+        </div>
+        -->
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <label>Cliente</label>
+                <select id="ciCli"  name="ciCli"  class="form-control selectpicker"  data-size="6" data-live-search="true">
+                    @foreach ($cliente as $cli)
+                        <option value="{{$cli -> ciCliente}}_{{$cli -> costo}}">{{$cli -> ciCliente}} {{$cli -> nombre}}</option>
                     @endforeach
                 </select>
             </div>
         </div>
 
-        <input type="hidden" id="idZona" name="idZona">
+        <input type="hidden" id="ciCliente" name="ciCliente">
         <input id="montoP" type="hidden" name="montoP" class="form-control" >
 
 
@@ -164,15 +175,15 @@
         }
 
         function zonaFun() {
-            datosZona = document.getElementById('idZon').value.split('_');
-            $('#idZona').val(datosZona[0]);
-            costoZona = parseFloat(datosZona[1]);
+            datosCliente = document.getElementById('ciCli').value.split('_');
+            $('#ciCliente').val(datosCliente[0]);
+            costoZona = parseFloat(datosCliente[1]);
             $("#costo_envio").html("Bs. "+costoZona);
             mostrarTotal();
         }
 
         $('#idProducto').change(mostrarPrecio);
-        $('#idZon').change(zonaFun);
+        $('#ciCli').change(zonaFun);
 
         function mostrarTotal() {
             totalFactura = total + costoZona;

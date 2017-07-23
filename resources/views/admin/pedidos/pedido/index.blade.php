@@ -18,7 +18,7 @@
 					<th style="text-align: center">Codigo</th>
 					<th style="text-align: center">Fecha</th>
 					<th>Estado</th>
-					<th>Zona</th>
+					<th>Cliente</th>
 					<th style="text-align: center">Monto Total</th>
 					<th style="text-align: center">Opciones</th>
 				</thead>
@@ -26,7 +26,7 @@
 				<tr >
 					<td style="text-align: center">{{$ped -> idPedido}}</td>
 					<td style="text-align: center">{{$ped -> fecha}}</td>
-					<td>{{$ped -> zona}}</td>
+					<td>{{$ped -> cliente}}</td>
 					<td style="text-align: center">{{$ped -> montoP}}</td>
 					<td><h4><span class="label label-primary pull-top">{{ $ped -> estado}}</span></h4></td>
 					<td style="text-align: center">

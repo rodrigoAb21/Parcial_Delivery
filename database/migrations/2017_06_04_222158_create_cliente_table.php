@@ -14,9 +14,8 @@ class CreateClienteTable extends Migration
     public function up()
     {
         Schema::create('cliente', function (Blueprint $table) {
-            $table->string('ci');
+            $table->string('ciCliente');
             $table->string('nombre');
-            $table->string('apellido');
             $table->string('direccion');
             $table->string('referencia');
             $table->string('telefono1');
@@ -29,7 +28,7 @@ class CreateClienteTable extends Migration
             $table->timestamps();
             $table->integer('idZona')->unsigned();
 
-            $table->primary('ci');
+            $table->primary('ciCliente');
             $table->foreign('idZona')->references('idZona')->on('zona');
         });
     }

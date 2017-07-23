@@ -17,12 +17,12 @@ class CreatePedidoTable extends Migration
             $table->increments('idPedido');
             $table->timestamp('fecha');
             $table->float('montoP');
-            $table->integer('idZona')->unsigned();
+            $table->string('ciCliente');
             $table->integer('idEstado')->unsigned();
             $table->char('visible');
             $table->timestamps();
 
-            $table->foreign('idZona')->references('idZona')->on('zona');
+            $table->foreign('ciCliente')->references('ciCliente')->on('cliente');
             $table->foreign('idEstado')->references('idEstado')->on('estado');
         });
     }

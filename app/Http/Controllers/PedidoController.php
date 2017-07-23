@@ -32,8 +32,8 @@ class PedidoController extends Controller
             $query = trim($request->get('searchText'));
             $pedido = DB::table('pedido')
                 ->join('estado', 'pedido.idEstado', '=', 'estado.idEstado')
-                ->join('zona', 'pedido.idZona', '=', 'zona.idZona')
-                ->select('pedido.idPedido','pedido.fecha','pedido.montoP', 'estado.nombre as estado', 'zona.nombre as zona')
+                ->join('cliente', 'pedido.ciCliente', '=', 'cliente.ciCliente')
+                ->select('pedido.idPedido','pedido.fecha','pedido.montoP', 'estado.nombre as estado', 'cliente.nombre as cliente')
                 ->where('pedido.idPedido','LIKE','%'.$query.'%')
                 ->where('pedido.visible','=','1')
                 ->orderBy('pedido.idPedido','asc')
@@ -50,12 +50,14 @@ class PedidoController extends Controller
     public function create(){
         $estado = DB::table('estado')
             ->where('visible', '=', '1') -> get();
-        $zona = DB::table('zona')
-            ->where('visible', '=', '1') -> get();
+        $cliente = DB::table('cliente')
+            ->join('zona','cliente.idZona','=','zona.idZona')
+            ->select('cliente.ciCliente','cliente.nombre', 'zona.costo as costo')
+            ->where('cliente.visible', '=', '1') -> get();
         $producto = DB::table('producto')
             ->select('idProducto','nombre','precio')
             ->where('visible', '=', '1') -> get();
-        return view("admin.pedidos.pedido.create",["zona" => $zona, "estado" => $estado, "producto" => $producto]);
+        return view("admin.pedidos.pedido.create",["cliente" => $cliente, "estado" => $estado, "producto" => $producto]);
 
     }
 
@@ -70,7 +72,7 @@ class PedidoController extends Controller
         try {
             DB::beginTransaction();
             $pedido = new Pedido;
-            $pedido -> idZona = $request -> get('idZona');
+            $pedido -> ciCliente = $request -> get('ciCliente');
             $pedido -> idEstado = $request -> get('idEstado');
             $pedido -> montoP = $request -> get('montoP');
             $my_time = Carbon::now('America/La_Paz');
@@ -114,9 +116,10 @@ class PedidoController extends Controller
     public function show($id)
     {
         $pedido = DB::table('pedido')
-            -> join('zona', 'zona.idZona', '=', 'pedido.idZona')
+            -> join('cliente', 'cliente.ciCliente', '=', 'pedido.ciCliente')
             -> join('estado', 'estado.idEstado', '=', 'pedido.idEstado')
-            -> select('pedido.idPedido', 'pedido.fecha', 'pedido.montoP', 'zona.nombre as zona', 'zona.costo', 'estado.nombre as estado')
+            -> join('zona', 'zona.idZona', '=', 'cliente.idZona')
+            -> select('pedido.idPedido', 'pedido.fecha', 'pedido.montoP', 'cliente.nombre as cliente', 'zona.costo', 'estado.nombre as estado')
             -> where('pedido.idPedido', '=', $id)
             -> first();
 

@@ -15,7 +15,7 @@ class Pedido extends Model
     protected $fillable = [
         'fecha',
         'montoP',
-        'idZona',
+        'ciCliente',
         'idEstado',
         'visible'
     ];
