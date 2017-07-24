@@ -22,8 +22,9 @@ class CreatePedidoTable extends Migration
             $table->char('visible');
             $table->timestamps();
 
-            $table->foreign('ciCliente')->references('ciCliente')->on('cliente');
+            $table->foreign('ciCliente')->references('ciCliente')->on('cliente')->onDelete('cascade');
             $table->foreign('idEstado')->references('idEstado')->on('estado');
+
         });
     }
 

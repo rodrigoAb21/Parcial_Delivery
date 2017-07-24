@@ -122,6 +122,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href=""><i class="fa fa-arrow-right"></i> Usuarios</a></li>
+                <li><a href="{{asset('admin/pedidos/cliente')}}"><i class="fa fa-arrow-right"></i> Gestionar Clientes</a></li>
                 <li><a href=""><i class="fa fa-arrow-right"></i> Permisos</a></li>
                 
               </ul>

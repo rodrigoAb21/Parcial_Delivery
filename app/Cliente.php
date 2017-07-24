@@ -8,7 +8,7 @@ class Cliente extends Model
 {
     protected $table = 'cliente';
 
-    protected $primaryKey = 'ci';
+    protected $primaryKey = 'ciCliente';
 
     public $timestamps = true;
 
@@ -24,5 +24,9 @@ class Cliente extends Model
         'password',
         'idZona',
         'visible'
+    ];
+
+    protected $hidden = [
+        'password', 'remember_token',
     ];
 }
