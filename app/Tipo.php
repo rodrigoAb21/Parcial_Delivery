@@ -16,4 +16,14 @@ class Tipo extends Model
         'nombre',
         'visible'
     ];
+
+
+    public function scope_getTipos($query, $busqueda){
+        $tipo = $query ->where('nombre','LIKE','%'.$busqueda.'%')
+            -> where('visible','1')
+            -> orderBy('idTipo','asc');
+        return $tipo;
+    }
+
+
 }

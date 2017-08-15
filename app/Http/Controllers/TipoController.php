@@ -25,14 +25,13 @@ class TipoController extends Controller
     public function index(Request $request)
     {
         if ($request){
-            $query = trim($request -> get('searchText'));
-            $tipo=DB::table('tipo')->where('nombre','LIKE','%'.$query.'%')
-                ->where ('visible','=','1')
-                ->orderBy('idTipo','asc')
-                ->paginate(7);
-            return view('admin.pedidos.tipo.index',["tipo" => $tipo, "searchText" => $query]);
+            $busqueda = trim($request -> get('searchText'));
+            $tipo = Tipo::_getTipos($busqueda)->paginate(10);
+            return view('admin.pedidos.tipo.index',["tipo" => $tipo, "searchText" => $busqueda]);
         }
     }
+
+
 
     /**
      * Show the form for creating a new resource.
